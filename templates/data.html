@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Data</title>
+	<title>Panama Vaccination Data</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+		}
+		h1 {
+			color: #0066cc;
+			text-align: center;
+		}
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 80%;
+			max-width: 900px;
+			min-width: 500px;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+		}
+		th, td {
+			padding: 12px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #0066cc;
+			color: #fff;
+			font-weight: normal;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
 </head>
 <body>
 	<h1>Panama Vaccination Data</h1>
 	<table>
-		<tr>
-			<th>Country or Area</th>
-			<th>Item</th>
-			<th>Year</th>
-			<th>Value</th>
-		</tr>
-		{% for record in data %}
-		<tr>
-			<td>{{ record.Country_or_Area }}</td>
-			<td>{{ record.Item }}</td>
-			<td>{{ record.Year }}</td>
-			<td>{{ record.Value }}</td>
-		</tr>
-		{% endfor %}
+		<thead>
+			<tr>
+				<th>Country or Area</th>
+				<th>Item</th>
+				<th>Year</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for record in data %}
+			<tr>
+				<td>{{ record.Country_or_Area }}</td>
+				<td>{{ record.Item }}</td>
+				<td>{{ record.Year }}</td>
+				<td>{{ record.Value }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
 	</table>
 </body>
 </html>
